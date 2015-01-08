@@ -7,14 +7,14 @@ $(document).ready(function() {
 	for (var i = 0; i < 1024; i++)
 		$('#container').append('<div class="gridbox"></div>');
 
-	$('.gridbox').click(function() {
-		$(this).css("background-color", "white");
-	});
-
-	$('.gridbox').hover(function() {
-		$(this).css("background-color", "blue");
-	}, function() {
-		//$(this).css("background-color", "white");
+	$('.gridbox')
+		.click(function() {
+			$(this).css("background-color", "white");
+		})
+		.hover(function() {
+			$(this).css("background-color", "blue");
+		}, function() {
+			//$(this).css("background-color", "white");
 	});
 
 	$('#clear')
@@ -37,15 +37,12 @@ $(document).ready(function() {
 			$(this).css("background-color", "#555555");
 	});
 
-	$('button').hover(function() {
-		$(this).css("background-color", "#666666");
-	}, function() {
-		$(this).css("background-color", "#555555");
-		$(this).css("color", "#DDDDDD");
-	});
-
-	$('#reset').click(function() {
-		console.log();
+	$('button')
+		.hover(function() {
+			$(this).css("background-color", "#666666");
+		}, function() {
+			$(this).css("background-color", "#555555");
+			$(this).css("color", "#DDDDDD");
 	});
 
 	$('input[name=\'rows\']').change(function() {
