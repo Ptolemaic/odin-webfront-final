@@ -4,7 +4,7 @@ $(document).ready(function() {
 		$('#container').append('<div class="gridbox"></div>');
 
 	$('.gridbox').click(function() {
-		$(this).fadeOut('slow', 0);
+		$(this).css("background-color", "white");
 	});
 
 	$('.gridbox').hover(function() {
