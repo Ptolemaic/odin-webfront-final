@@ -1,53 +1,31 @@
 $(document).ready(function() {
 
+	// Grab default grid input values
 	var rows = $('input[name=\'rows\']').val();
 	var cols = $('input[name=\'cols\']').val();
 	var pixels = $('input[name=\'pixels\']').val();
 
-	fillGrid(rows, cols);
-
-	
-
-	$('#reset')
-		.mousedown(function() {
-			$('.gridbox').css("background-color", "white");
-			$(this).css("background-color", "#66FF99");
-		})
-		.mouseup(function() {
-			$(this).css("background-color", "#555555");
-	});
-
-	$('#clear')
-		.mousedown(function() {
-			$('input[name=\'rows\']').val(0);
-			$('input[name=\'cols\']').val(0);
-			$('input[name=\'pixels\']').val(0);
-			$(this).css("background-color", "#66FF99");
-		})
-		.mouseup(function() {
-			$(this).css("background-color", "#555555");
-	});
-
-	$('#go')
-		.mousedown(function() {
-			$(this).css("background-color", "#66FF99");
-			fillGrid(rows, cols);
-		})
-		.mouseup(function() {
-			$(this).css("background-color", "#555555");
-			startDraw();
-	});
-
+	// Spicing up the buttons
 	$('button')
 		.hover(function() {
 			$(this).css("background-color", "#666666");
 		}, function() {
 			$(this).css("background-color", "#555555");
 			$(this).css("color", "#DDDDDD");
+		})
+		.mousedown(function() {
+			$(this).css("background-color", "#66FF99");
+		})
+		.mouseup(function() {
+			$(this).css("background-color", "#555555");
 	});
 
+	// Initialize draw grid with default values
+	fillGrid(rows, cols);
 	startDraw();
 
+
+	// User input is automatically stored when changed
 	$('input[name=\'rows\']').change(function() {
 		var rows = $('input[name=\'rows\']').val();
 		console.log(rows);
@@ -87,3 +65,20 @@ function startDraw() {
 	});
 }
 
+function clearInput() {
+	$('input[name=\'rows\']').val(0);
+	$('input[name=\'cols\']').val(0);
+	$('input[name=\'pixels\']').val(0);
+}
+
+function resetGrid() {
+	$('.gridbox').css("background-color", "white");
+}
+
+function go() {
+	var rows = $('input[name=\'rows\']').val();
+	var cols = $('input[name=\'cols\']').val();
+	var pixels = $('input[name=\'pixels\']').val();
+	fillGrid(rows, cols);
+	startDraw();
+}
