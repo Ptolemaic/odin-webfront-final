@@ -45,9 +45,9 @@ a:hover {
 
 
 p {
-	margin-top: 1px;
+	margin-top: 20px;
 	color: #DDDDDD;
-	font-size: 9pt;
+	font-size: 11pt;
 }
 
 #input {
@@ -62,7 +62,7 @@ input {
 	float: right;
 	background-color: #EEEEEE;
 	width: 50px;
-	font-size: 9pt;
+	font-size: 11pt;
 }
 
 
@@ -81,12 +81,6 @@ button {
 	width: 90px;
 	bottom: 6px;
 	left: 20px;
-}
-
-#clear {
-	position: absolute;
-	left: 105px;
-	width: 56px;
 }
 
 #go {
