@@ -2,22 +2,13 @@ $(document).ready(function() {
 
 	var rows = $('input[name=\'rows\']').val();
 	var cols = $('input[name=\'cols\']').val();
-	var boxes = $('input[name=\'boxes\']').val();
+	var pixels = $('input[name=\'pixels\']').val();
 
-	for (var i = 0; i < 1024; i++)
-		$('#container').append('<div class="gridbox"></div>');
+	fillGrid(rows, cols);
 
-	$('.gridbox')
-		.click(function() {
-			$(this).css("background-color", "white");
-		})
-		.hover(function() {
-			$(this).css("background-color", "blue");
-		}, function() {
-			//$(this).css("background-color", "white");
-	});
+	
 
-	$('#clear')
+	$('#reset')
 		.mousedown(function() {
 			$('.gridbox').css("background-color", "white");
 			$(this).css("background-color", "#66FF99");
@@ -26,15 +17,25 @@ $(document).ready(function() {
 			$(this).css("background-color", "#555555");
 	});
 
-	$('#reset')
+	$('#clear')
 		.mousedown(function() {
 			$('input[name=\'rows\']').val(0);
 			$('input[name=\'cols\']').val(0);
-			$('input[name=\'boxes\']').val(0);
+			$('input[name=\'pixels\']').val(0);
 			$(this).css("background-color", "#66FF99");
 		})
 		.mouseup(function() {
 			$(this).css("background-color", "#555555");
+	});
+
+	$('#go')
+		.mousedown(function() {
+			$(this).css("background-color", "#66FF99");
+			fillGrid(rows, cols);
+		})
+		.mouseup(function() {
+			$(this).css("background-color", "#555555");
+			startDraw();
 	});
 
 	$('button')
@@ -44,6 +45,8 @@ $(document).ready(function() {
 			$(this).css("background-color", "#555555");
 			$(this).css("color", "#DDDDDD");
 	});
+
+	startDraw();
 
 	$('input[name=\'rows\']').change(function() {
 		var rows = $('input[name=\'rows\']').val();
@@ -55,8 +58,32 @@ $(document).ready(function() {
 		console.log(cols);
 	});
 
-	$('input[name=\'boxes\']').change(function() {
-		var boxes = $('input[name=\'boxes\']').val();
-		console.log(boxes);
+	$('input[name=\'pixels\']').change(function() {
+		var pixels = $('input[name=\'pixels\']').val();
+		console.log(pixels);
 	});
 });
+
+function fillGrid(rows, cols) {
+	emptyGrid();
+	for (var i = 0; i < (rows * cols); i++)
+		$('#container').append('<div class="gridbox"></div>');
+}
+
+
+function emptyGrid() {
+	$('.gridbox').each(function() {
+		$(this).remove();
+	});
+}
+
+function startDraw() {
+	$('.gridbox')
+		.click(function() {
+			$(this).css("background-color", "white");
+		})
+		.hover(function() {
+			$(this).css("background-color", "blue");
+	});
+}
+
