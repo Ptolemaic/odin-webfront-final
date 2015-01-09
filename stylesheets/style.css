@@ -101,7 +101,7 @@ input {
 }
 
 .colorButton:hover {
-	border: 2px solid #666666;
+	border: 2px solid #666666 !important;
 }
 
 #useRed {
