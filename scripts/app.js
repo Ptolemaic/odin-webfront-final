@@ -1,10 +1,12 @@
+var drawColor = "blue";
+
 $(document).ready(function() {
 
 	// Grab default grid input values
 	var boxes = $('input[name=\'boxes\']').val();
 
 	// Spicing up the buttons
-	$('button')
+	$('.inputButton')
 		.hover(function() {
 			$(this).css("background-color", "#666666");
 		}, function() {
@@ -18,14 +20,24 @@ $(document).ready(function() {
 			$(this).css("background-color", "#555555");
 	});
 
+	$('.colorButton')
+		.hover(function() {
+			$(this).css("border", "2px solid #666666");
+		}, function() {
+			$(this).css("border", "0");
+		})
+		.mousedown(function() {
+			$('.colorButton').css("border", "0");
+			$(this).css("border", "2px dashed orange");
+	});
+
 	// Initialize draw grid with default values
 	fillGrid(boxes);
 	startDraw();
 
 	// User input is automatically stored when changed
 	$('input[name=\'boxes\']').change(function() {
-		var boxes = $('input[name=\'boxes\']').val();
-		console.log(rows);
+		boxes = $('input[name=\'boxes\']').val();
 	});
 });
 
@@ -53,7 +65,7 @@ function startDraw() {
 			$(this).css("background-color", "white");
 		})
 		.hover(function() {
-			$(this).css("background-color", "blue");
+			$(this).css("background-color", drawColor);
 	});
 }
 
@@ -64,5 +76,30 @@ function resetGrid() {
 function go() {
 	var boxes = $('input[name=\'boxes\']').val();
 	fillGrid(boxes);
+	startDraw();
+}
+
+function useRed() {
+	drawColor = "red";
+	startDraw();
+}
+
+function useBlue() {
+	drawColor = "blue";
+	startDraw();
+}
+
+function useGreen() {
+	drawColor = "green";
+	startDraw();
+}
+
+function useYellow() {
+	drawColor = "yellow";
+	startDraw();
+}
+
+function usePurple() {
+	drawColor = "purple";
 	startDraw();
 }
