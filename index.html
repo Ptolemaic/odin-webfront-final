@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Draw Grid</title>
+		<title>JS/jQuery Draw Grid</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"> </script>
 		<script src="scripts/app.js" type="text/javascript"> </script>
 		<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -14,29 +14,20 @@
 	<body>
 
 		<header role="banner">
-			<h1>The Odin Project: JS/jQuery Front End</h1>
-			<h2>
-				<a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery">See the Project Specification</a>
-			</h2>
+			<h1>The Odin Project: JS/jQuery Drawing Grid</h1>
+			<h2><a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery">See the Project Specification</a></h2>
 			<div id="input">
 				<p>Boxes per Row: <input type="text" name="rows" value="32"></input></p>
 				<p>Boxes per Column: <input type="text" name="cols" value="32"></input></p>
-				<p>Box Size (pixels): <input type="text" name="boxes" value="25"></input></p>		
-				<button id="clear">Clear Grid</button>
-				<button id="reset">Reset</button>
+				<p>Box Size (pixels): <input type="text" name="pixels" value="25"></input></p>		
+				<button id="clear">Clear</button>
 			</div>
-			
-			
+			<button id="go">Go</button>
+			<button id="reset">Reset Grid</button>	
 		</header>
-		
-		
-
 		<div id="container"></div>
-
 		<footer>
-			<h4>2014 Infinite Props</h4>
+			<h4>2015 Infinite Props</h4>
 		</footer>
-
 	</body>
-
 </html>
