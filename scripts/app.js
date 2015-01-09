@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
 	// Grab default grid input values
-	var rows = $('input[name=\'rows\']').val();
-	var cols = $('input[name=\'cols\']').val();
-	var pixels = $('input[name=\'pixels\']').val();
+	var boxes = $('input[name=\'boxes\']').val();
 
 	// Spicing up the buttons
 	$('button')
@@ -21,33 +19,27 @@ $(document).ready(function() {
 	});
 
 	// Initialize draw grid with default values
-	fillGrid(rows, cols);
+	fillGrid(boxes);
 	startDraw();
 
-
 	// User input is automatically stored when changed
-	$('input[name=\'rows\']').change(function() {
-		var rows = $('input[name=\'rows\']').val();
+	$('input[name=\'boxes\']').change(function() {
+		var boxes = $('input[name=\'boxes\']').val();
 		console.log(rows);
-	});
-
-	$('input[name=\'cols\']').change(function() {
-		var cols = $('input[name=\'cols\']').val();
-		console.log(cols);
-	});
-
-	$('input[name=\'pixels\']').change(function() {
-		var pixels = $('input[name=\'pixels\']').val();
-		console.log(pixels);
 	});
 });
 
-function fillGrid(rows, cols) {
+function fillGrid(boxes) {
 	emptyGrid();
-	for (var i = 0; i < (rows * cols); i++)
+	for (var i = 0; i < (boxes); i++)
 		$('#container').append('<div class="gridbox"></div>');
-}
 
+	var span = Math.sqrt(boxes);
+	var size = 800 / span;
+
+	$('.gridbox').css("width", size);
+	$('.gridbox').css("height", size);
+}
 
 function emptyGrid() {
 	$('.gridbox').each(function() {
@@ -65,20 +57,12 @@ function startDraw() {
 	});
 }
 
-function clearInput() {
-	$('input[name=\'rows\']').val(0);
-	$('input[name=\'cols\']').val(0);
-	$('input[name=\'pixels\']').val(0);
-}
-
 function resetGrid() {
 	$('.gridbox').css("background-color", "white");
 }
 
 function go() {
-	var rows = $('input[name=\'rows\']').val();
-	var cols = $('input[name=\'cols\']').val();
-	var pixels = $('input[name=\'pixels\']').val();
-	fillGrid(rows, cols);
+	var boxes = $('input[name=\'boxes\']').val();
+	fillGrid(boxes);
 	startDraw();
 }
