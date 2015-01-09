@@ -16,11 +16,20 @@
 		<header role="banner">
 			<h1>The Odin Project: JS/jQuery Drawing Grid</h1>
 			<h2><a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery">See the Project Specification</a></h2>
-			<div id="input">
-				<p>Number of Cells: <input type="text" name="boxes" value="1024"></input></p>	
+			<div id="inputPanel">
+				<p>Number of Cells: <input type="text" name="boxes" value="4096"></input></p>
+				<button class="inputButton" id="reset" onclick="resetGrid();">Reset Grid</button>	
+				<button class="inputButton" id="go" onclick="go();">Go</button>
 			</div>
-			<button id="go" onclick="go();">Go</button>
-			<button id="reset" onclick="resetGrid();">Reset Grid</button>	
+			<div id="colorPanel">
+				<p> Pen Color:</p>
+				<button class="colorButton" id="useRed" onclick="useRed();"></button>
+				<button class="colorButton" id="useBlue" onclick="useBlue();"></button>
+				<button class="colorButton" id="useGreen" onclick="useGreen();"></button>
+				<button class="colorButton" id="useYellow" onclick="useYellow();"></button>
+				<button class="colorButton" id="usePurple" onclick="usePurple();"></button>
+			</div>
+	
 		</header>
 		<div id="container"></div>
 		<footer>
