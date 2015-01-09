@@ -21,13 +21,8 @@ $(document).ready(function() {
 	});
 
 	$('.colorButton')
-		.hover(function() {
-			$(this).css("border", "2px solid #666666");
-		}, function() {
-			$(this).css("border", "0");
-		})
 		.mousedown(function() {
-			$('.colorButton').css("border", "0");
+			$('.colorButton').css("border", "none")
 			$(this).css("border", "2px dashed orange");
 	});
 
