@@ -6,3 +6,6 @@
   
   I have followed the spirit of the specification but disagree with some of their design choices, such as the use of interruptive popups for input. For this reason my project deviates from a strict implementation. Since this was my first project with JS/jQuery I took the liberties to get a little creative and tweak the design to my liking.
   
+  You can preview this project here:
+  
+  http://htmlpreview.github.io/?https://raw.githubusercontent.com/ThothLogos/odin-webfront/master/index.html
