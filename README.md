@@ -8,4 +8,4 @@
   
   You can preview this project here:
   
-    http://htmlpreview.github.io/?https://raw.githubusercontent.com/ThothLogos/odin-webfront/master/index.html
+  http://htmlpreview.github.io/?https://raw.githubusercontent.com/ThothLogos/odin-webfront/master/index.html
