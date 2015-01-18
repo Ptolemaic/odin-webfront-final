@@ -140,7 +140,7 @@ input {
 
 footer {
 	margin-top: 20px;
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	width: 100%;
 	height: 80px;
