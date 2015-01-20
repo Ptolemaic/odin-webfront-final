@@ -55,12 +55,17 @@ function emptyGrid() {
 }
 
 function startDraw() {
+	var penDown = false;
 	$('.gridbox')
 		.click(function() {
-			$(this).css("background-color", "white");
+			if (penDown)
+				penDown = false;
+			else
+				penDown = true;
 		})
 		.hover(function() {
-			$(this).css("background-color", drawColor);
+			if (penDown)
+				$(this).css("background-color", drawColor);				
 	});
 }
 
@@ -96,5 +101,15 @@ function useYellow() {
 
 function usePurple() {
 	drawColor = "purple";
+	startDraw();
+}
+
+function useBlack() {
+	drawColor = "black";
+	startDraw();
+}
+
+function useWhite() {
+	drawColor = "white";
 	startDraw();
 }

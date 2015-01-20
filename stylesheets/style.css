@@ -50,6 +50,7 @@ p {
 	font-size: 11pt;
 }
 
+
 #inputPanel {
 	width: 225px;
 	position: absolute;
@@ -93,6 +94,14 @@ input {
 	left: 300px;
 }
 
+#penHint {
+	margin: 0;
+	margin-top: 4px;
+	margin-left: 40px;
+	padding: 0;
+	font-size: 6pt;
+}
+
 .colorButton {
 	height: 25px;
 	width: 25px;
@@ -122,6 +131,14 @@ input {
 
 #usePurple {
 	background-color: purple;
+}
+
+#useBlack {
+	background-color: black;
+}
+
+#useWhite {
+	background-color: white;
 }
 
 #container {
