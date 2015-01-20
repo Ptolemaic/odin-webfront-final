@@ -58,10 +58,7 @@ function startDraw() {
 	var penDown = false;
 	$('.gridbox')
 		.click(function() {
-			if (penDown)
-				penDown = false;
-			else
-				penDown = true;
+			penDown = !penDown;
 		})
 		.hover(function() {
 			if (penDown)
