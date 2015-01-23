@@ -1,6 +1,6 @@
-# odin-webfront-final
+# The Odin Project - Web Development 101
 
-<h2>The Odin Project: JS/jQuery Front End</h2>
+<h3>JS/jQuery Front End - Drawing Grid</h3>
 
   This is a personal project done for training and as an example of basic UI/UX and JS/jQuery. The original project specification can be found at this location: http://www.theodinproject.com/web-development-101/javascript-and-jquery
   
